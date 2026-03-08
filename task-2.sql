@@ -38,7 +38,7 @@ WITH gen_data( title, emp_id, ar_id, pub_at, compensation, hours, dep, spec_id) 
     SELECT md5(random()::text) AS title,
            floor((random() * 9) + 1)::int  AS emp_id,
            floor((random() * 9) + 1)::int  AS ar_id,
-           '2025-01-01 00:00:00'::timestamp + random() * interval '365 days' AS pub_at,
+           '2023-01-01 00:00:00'::timestamp + random() * interval '1096 days' AS pub_at,
            round((random() * 1000000)::int, -3) AS compensation,
            (floor((random() * 4) + 1)::int * 10) AS hours,
            md5(random()::text) AS dep,
@@ -51,7 +51,7 @@ FROM gen_data;
 
 WITH gen_data(title, cr_at, f_name, l_name, ar_id, spec_id) AS (
     SELECT  md5(random()::text) AS title,
-            '2025-01-01 00:00:00'::timestamp + random() * interval '365 days' AS cr_at,
+            '2023-01-01 00:00:00'::timestamp + random() * interval '1096 days' AS cr_at,
             md5(random()::text) AS f_name,
             md5(random()::text) AS l_name,
             floor((random() * 9) + 1)::int  AS ar_id,
